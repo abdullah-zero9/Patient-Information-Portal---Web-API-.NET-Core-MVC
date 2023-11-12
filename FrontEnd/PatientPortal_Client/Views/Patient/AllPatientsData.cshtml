@@ -76,6 +76,7 @@
                 </td>
 
             <td>
+                    @Html.ActionLink("Edit", "EditPatientData", new { id = item.PatientId }, new { @class = "btn btn-sm btn-outline-warning" })
                     @Html.ActionLink("Delete", "DeletePatientData", new {  id = item.PatientId  }, new {@class="btn btn-sm btn-outline-danger"})
                     
             </td>

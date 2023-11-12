@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace PatientInformationPortal_Frontend.Models
+namespace PatientPortal_Client.Models
 {
     public class Disease
     {

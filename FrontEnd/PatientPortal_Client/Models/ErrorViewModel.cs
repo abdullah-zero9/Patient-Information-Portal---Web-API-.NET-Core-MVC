@@ -1,4 +1,4 @@
-namespace PatientInformationPortal_Frontend.Models
+namespace PatientPortal_Client.Models
 {
     public class ErrorViewModel
     {
