@@ -4,6 +4,15 @@
 
 This repository contains the completed Patient Information Portal project, developed using Web API in .NET Core MVC. The project aims to store, manage, and display patient information through a user-friendly interface.
 
+## Key Highlights of the Project:
+
+- **UI Design: The UI design, as outlined in "UI Design.pdf," has been faithfully replicated.
+- **Front-end: Developed using MVC Core (>=6.0).
+- **Back-end: Implemented using Web API (>=6.0) with Entity Framework Core for data operations.
+- **Database: Utilized MS SQL Server, and the SQL script is included in the project folder.
+- **Repository Pattern: The repository code pattern has been applied for efficient data access.
+
+
 ## Getting Started
 
 To access and run the Patient Information Portal project locally, follow these steps:
