@@ -1,7 +1,7 @@
-﻿using PatientInformationPortal_Frontend.Models;
+﻿using PatientPortal_Client.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace PatientInformationPortal_Frontend.ViewModels
+namespace PatientPortal_Client.ViewModels
 {
     public class PatientInputModel
     {

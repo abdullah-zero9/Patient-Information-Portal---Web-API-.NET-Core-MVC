@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
-using PatientInformationPortal_Frontend.Helpers;
-using PatientInformationPortal_Frontend.Models;
-using PatientInformationPortal_Frontend.ViewModels;
+using PatientPortal_Client.Helpers;
 using PatientPortal_Client.ViewModels;
+using PatientPortal_Client.Models;
 
-namespace PatientInformationPortal_Frontend.Controllers
+namespace PatientPortal_Client.Controllers
 {
     public class PatientController : Controller
     {
@@ -162,6 +161,45 @@ namespace PatientInformationPortal_Frontend.Controllers
             }
 
             return View();
+        }
+
+        public async Task<IActionResult> EditPatientData(int id)
+        {
+            // Fetch patient data by id
+            HttpClient client = api.Initial();
+            HttpResponseMessage response = await client.GetAsync($"http://localhost:5031/api/Patient/GetPatientData/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = response.Content.ReadAsStringAsync().Result;
+                var patient = JsonConvert.DeserializeObject<PatientInputModel>(result);
+
+                // Fetch additional data needed for dropdowns, similar to InsertPatientData action
+
+                return View(patient);
+            }
+
+            return RedirectToAction("AllPatientsData");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditPatientData(PatientInputModel modelData, [FromForm] List<int> NCD_Ids)
+        {
+            // Update patient data
+            HttpClient client = api.Initial();
+            var putData = client.PutAsJsonAsync<PatientInputModel>("http://localhost:5031/api/Patient/UpdatePatientData", modelData);
+
+            putData.Wait();
+
+            var result = putData.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                return RedirectToAction("AllPatientsData");
+            }
+
+            // Handle errors if needed
+            return View(modelData);
         }
 
         public async Task<IActionResult> DeletePatientData(int id)

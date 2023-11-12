@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PatientInformationPortal_Frontend.Models;
+using PatientPortal_Client.Models;
 using System.Diagnostics;
 
-namespace PatientInformationPortal_Frontend.Controllers
+namespace PatientPortal_Client.Controllers
 {
     public class HomeController : Controller
     {

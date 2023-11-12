@@ -1,4 +1,4 @@
-﻿namespace PatientInformationPortal_Frontend.Helpers
+﻿namespace PatientPortal_Client.Helpers
 {
     public class WebApi
     {

@@ -33,10 +33,17 @@ namespace Repositories.Repos
         //    return dbset.AsQueryable();
         //}
 
+
+        //public async Task<T> GetDataById(Expression<Func<T, bool>> predicate)
+        //{
+        //    return await dbset.AsQueryable().FirstAsync(predicate);
+        //}
+
         public async Task<T> GetDataById(Expression<Func<T, bool>> predicate)
         {
-            return await dbset.AsQueryable().FirstAsync(predicate);
+            return await dbset.AsQueryable().FirstOrDefaultAsync(predicate);
         }
+
 
         public async Task<IEnumerable<T>> GetAllDataById(Expression<Func<T, bool>> predicate)
         {

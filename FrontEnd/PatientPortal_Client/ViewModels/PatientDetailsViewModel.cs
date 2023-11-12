@@ -1,4 +1,4 @@
-﻿using PatientInformationPortal_Frontend.Models;
+﻿using PatientPortal_Client.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace PatientPortal_Client.ViewModels

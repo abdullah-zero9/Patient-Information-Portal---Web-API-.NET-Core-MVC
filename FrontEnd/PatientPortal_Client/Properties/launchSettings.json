@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "PatientInformationPortal_Frontend": {
+    "PatientPortal_Client": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
